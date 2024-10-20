@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com.css?family=Bangers");
+
+.hero__section {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(255, 255, 255);
+    max-width: 2000px; 
+    font-family: "Bangers", "sans-serif";
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero__content {
+    flex: 1; /* Đẩy hero content sang trái */
+    padding-right: 50px; /* Khoảng cách giữa content và box */
+}
+
+.box-container {
+    display: flex;
+    gap: 20px; /* Tạo khoảng cách giữa các box */
+    transition: all 400ms ease-in-out;
+    align-items: flex-start; /* Canh mặc định các box bắt đầu từ trên cùng */
+}
+
+.box-container {
+    display: flex;
+    gap: 20px; /* Tạo khoảng cách giữa các box */
+    align-items: center; /* Canh giữa các box */
+}
+
+.box {
+    background: var(--img) center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    width: 20%; /* Cố định chiều rộng cho mỗi box */
+    position: relative;
+    transition: transform 400ms ease, margin-left 400ms ease, filter 400ms ease;
+    z-index: 1;
+    animation: moveUpDown 3s ease-in-out infinite; /* Hiệu ứng chuyển động lên xuống */
+}
+
+/* Hiệu ứng chuyển động lên xuống */
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0); /* Vị trí mặc định */
+    }
+    50% {
+        transform: translateY(-15px); /* Di chuyển lên 15px */
+    }
+}
+
+/* Tạo hiệu ứng hơi lệch thời gian cho các box */
+.box:nth-child(odd) {
+    animation-delay: 0.8s; /* Delay hiệu ứng cho box lẻ */
+}
+
+.box:nth-child(even) {
+    animation-delay: 1s; /* Delay hiệu ứng cho box chẵn */
+}
+
+/* Điều chỉnh kích thước các box cụ thể */
+.box-1, .box-4 {
+    height: 300px; 
+    align-self: center;
+    width: 250px;
+}
+
+.box-2, .box-3 {
+    height: 340px;
+    width: 300px; 
+}
+
+.box img {
+    border-radius: 10px;
+    width: 190px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hiệu ứng hover phóng to */
+.box img:hover {
+    transform: scale(1.1); 
+}
+
+/* Các box không được hover sẽ nhỏ lại và chuyển sang đen trắng */
+.box-container:hover .box {
+    filter: grayscale(100%) opacity(50%);
+    transform: scale(0.9); /* Nhỏ lại khi không được hover */
+    transition: transform 300ms ease, filter 300ms ease; /* Tạo chuyển đổi mượt */
+}
+
+/* Box được hover sẽ giữ màu và phóng to */
+.box-container .box:hover {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(2.1); /* Phóng to box khi hover */
+}
+
+
+
+
+
+.hero__content h2 {
+  line-height: 55px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: left; /* Align h2 to the left */
+}
+
+.hero__content h2 span {
+  background: linear-gradient(-45deg, #e250e5, #4b50e6, #e250e5, #4b50e6);
+  background-size: 100% 100%;
+  background-clip: text;
+  -webkit-text-stroke: 3px transparent;
+  -webkit-text-fill-color: #14141f;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0; /* Remove margin-left */
+}
+
+.hero__content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-align: left;/* Align p to the left */
+}
+
+.hero__btns {
+    margin-top: 0px;
+    display: flex;
+    gap: 10px; /* Add space between buttons */
+    align-items: center; /* Align items vertically center */
+}
+
+.explore__btn,
+.create__btn {
+    width: 120px;
+    border: none;
+    outline: none;
+    padding: 7px 25px !important;
+    border-radius: 30px !important;
+    border: 1px solid #000000 !important;
+    font-size: 0.9rem;
+    background: transparent;
+    color: #000000; /* Set text color to red */
+    display: flex; /* Use flexbox to align text and icons */
+    align-items: center; /* Vertically center text and icons */
+    justify-content: center; /* Horizontally center text and icons */
+}
+
+.explore__btn i,
+.create__btn i {
+    color: #000000; /* Set icon color to red */
+    font-size: 1rem;
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.explore__btn a,
+.create__btn a {
+    text-decoration: none;
+    color: #afd7e6; /* Set link color to red */
+}
+
+.hero__btns button a:hover {
+    color: #fc0000; /* Set hover color to red */
+}
+
+.hero__img {
+    width: 500px;
+    margin-left: auto;
+}
+
+.hero__img img {
+    border-radius: 7px;
+}
+

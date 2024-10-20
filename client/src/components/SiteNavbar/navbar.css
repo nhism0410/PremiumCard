@@ -1,0 +1,77 @@
+/* General Navbar Styling */
+.navbar {
+    height: 6rem;
+    padding: 0 4rem !important;
+    background: transparent; /* Background color */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Background color for the entire navbar */
+  }
+  
+  .navbar-brand {
+    flex: 1;
+    transition: all 0.2s ease;
+    font-size: 2rem;
+    margin-right: 50px;
+    background: linear-gradient(-45deg, #e250e5, #4b50e6, #e250e5, #4b50e6);
+    background-size: 100% 100%;
+    background-clip: text;
+    -webkit-text-stroke: 3px transparent;
+    -webkit-text-fill-color: #14141f;
+    
+  }
+  .navbar-nav > .nav-item {
+    margin: 0 1rem; /* Adjust the value to increase/decrease spacing */
+}
+.navbar-nav {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent; /* Background color */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%); /* Shadow effect only at the bottom */
+    padding: 2rem 7rem;
+    gap: 1rem; /* Adjust the value to increase/decrease spacing between items */
+}
+
+
+.site__navbar{
+    background-color: aqua;
+}
+  /* Specific Navbar Customization */
+  .site-navbar {
+    display: flex;
+    align-items: center;
+    background: red; /* Updated background color to red */
+  }
+  
+  /* Align account info to the right */
+  .navbar-nav .ml-auto {
+    margin-left: auto;
+  }
+  
+  /* Style for images in navbar */
+  .img {
+    padding: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style for secondary text in navbar */
+  .text-secondary {
+    margin-right: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  
+  /* Additional styling for secondary text */
+  .secondary {
+    font-size: 1rem;
+    color: #7a2e2e;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+  

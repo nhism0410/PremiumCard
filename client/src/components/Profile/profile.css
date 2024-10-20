@@ -1,0 +1,127 @@
+.profile {
+    max-width: 1200px; /* Đặt chiều rộng tối đa để nội dung không quá rộng */
+    margin: 0 auto; /* Căn giữa toàn bộ profile */
+    padding: 20px; /* Thêm padding cho không gian bên trong */
+    text-align: center;
+}
+
+.profile-buttons {
+    margin-bottom: 20px;
+    margin-top: 50px;
+    justify-items: start;
+    justify-content: start;
+    text-align: start;
+}
+
+.profile-buttons button {
+    margin: 0 5px; /* Giảm khoảng cách giữa các nút */
+    padding: 10px 15px;
+    border: none;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px; /* Thêm bo tròn cho nút */
+    transition: background-color 0.3s;
+    border: 1.5px solid #000000; 
+    box-shadow: rgba(0, 0, 0, 1.5) 0px 1px 2px px;/* Thêm hiệu ứng chuyển tiếp cho màu nền */
+}
+
+.profile-buttons button.active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.profile-buttons button:hover {
+    background-color:#5e5857;
+    color: #ffffff; /* Thay đổi màu khi hover */
+}
+
+.product-list {
+    margin-top: 20px;
+    height: 100%;
+}
+
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff85 ;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 15) 0px 4px 7px;
+}
+
+
+.profile-info {
+    display: flex;
+    align-items: flex-start; /* Căn chỉnh nội dung theo chiều dọc */
+}
+
+.profile-image {
+    margin-left: 50px;
+    border: 1px solid rgb(192, 188, 188);
+    box-shadow: rgba(0, 0, 0, 15) 0px 4px 6px;
+    border-radius: 50%; /* Tạo khoảng cách giữa hình ảnh và thông tin */
+}
+
+.profile-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.profile-name h2 {
+    display: flex;
+    align-items: center; /* Đảm bảo dấu tick ngang hàng với tên */
+    font-size: 25px;
+    font-weight: bold;
+}
+.profile-name p {
+    display: flex;
+    align-items: center; /* Đảm bảo dấu tick ngang hàng với tên */
+    font-size: 25px;
+}
+
+.verified {
+    display: inline-block;
+    width: 25px; /* Kích thước của biểu tượng tròn */
+    height: 25px;
+    background-color: #3666c0; /* Màu nền */
+    border-radius: 50%; /* Làm cho biểu tượng thành hình tròn */
+    position: relative;
+    margin-left: 8px;
+}
+
+.verified::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg); /* Căn giữa và xoay dấu tick */
+}
+
+.profile-name p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #888;
+}
+
+.copy-icon {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+
+.profile-image img {
+    width: 80px; /* Tăng kích thước hình ảnh */
+    height: 80px; /* Đảm bảo ảnh là hình vuông */
+    border-radius: 50%; /* Hình ảnh tròn */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị biến dạng */
+}
+
+

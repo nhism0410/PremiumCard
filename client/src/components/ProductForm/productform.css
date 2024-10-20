@@ -1,0 +1,182 @@
+.product-form-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: transparent;
+  animation: gradientAnimation 15s ease infinite;
+  background: linear-gradient(45deg, #156b81, #7abfd4, #818dc5, #ffffff);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.formbg {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 800px; /* Tăng chiều rộng tối đa của form */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 14px 14px 0px, rgba(0, 0, 0, 0.15) 0px 0px 15px 0px;
+  padding: 24px;
+  display: flex; /* Đặt flex để xếp chồng các phần */
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%; /* Giữ nguyên chiều rộng */
+  padding-right: 20px; /* Thêm khoảng cách giữa form và ảnh */
+}
+
+.right-section {
+  width: 55%; /* Giữ nguyên chiều rộng */
+  padding-left: 20px;
+}
+
+.upload-box {
+  border: 2px dashed #dfd3d3;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.upload-box.active {
+  background-color: #e0f7fa;
+}
+
+.upload-icon {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.upload-label {
+  background-color: #eeeaea;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.file-input {
+  display: none;
+}
+
+.image-preview-full {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.preview-image-full {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+h2 {
+  color: #333; /* Đã thay đổi màu sắc cho tiêu đề */
+  margin-bottom: 24px;
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.field label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #1a1f36;
+}
+
+.input-field {
+  font-size: 16px;
+  line-height: 28px;
+  padding: 10px 16px; /* Tăng padding */
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px;
+}
+
+.input-field:focus {
+  border-color: #4a90e2; /* Đổi màu viền khi focus */
+}
+
+.button-create {
+  padding: 12px 20px; /* Đã điều chỉnh padding cho nút */
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 95%;
+  justify-content: center;
+}
+
+.button-create:hover {
+  background-color: #919599; /* Đổi màu khi hover */
+}
+
+/* Đảm bảo rằng màu sắc và thiết kế tổng thể nhất quán */
+.field {
+  margin-bottom: 24px;
+}
+
+.field label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #1a1f36;
+}
+
+.input-field {
+  font-size: 16px;
+  line-height: 28px;
+  padding: 10px 16px; /* Tăng padding cho ô nhập */
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px;
+}
+.input-fields {
+  font-size: 16px;
+  line-height: 28px;
+  padding: 10px 16px; /* Tăng padding cho ô nhập */
+  width: 95%;
+  min-height: 44px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px;
+}
+
+.input-field:focus {
+  border-color: #4a90e2; /* Đổi màu viền khi ô nhập được chọn */
+}

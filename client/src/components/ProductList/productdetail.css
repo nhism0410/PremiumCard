@@ -1,0 +1,299 @@
+.product-detail {
+  display: grid;
+  align-items: flex-start;
+  padding: 20px;
+  justify-content: center;
+}
+
+.product-detail-container {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  justify-content: center;
+}
+
+.product-detail-left {
+  max-width: 450px;
+}
+
+.product-detail-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 50px; 
+}
+.toggle-details {
+  background: transparent;
+  color: #000000; /* Adjust based on your theme */
+  font-size: 16px;
+  justify-content: end;
+  margin-left: 10px;
+}
+.product-detail-description, .product-detail-extra-info {
+  background-color: #ffffff; /* Dark background like the image */
+  color: #000000; /* White text for readability on dark background */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: 1px solid #333333; /* Subtle border to match the dark theme */
+}
+.product-detail-extra-info p {
+  display: flex;
+  align-items: center; /* Aligns the text in a single line */
+  margin-bottom: 8px;
+}/* Styling for description and details */
+/* Căn chỉnh kiểu hiển thị cho "Mô tả" và "Chi tiết" */
+.product-detail-description, .product-detail-extra-info {
+  background-color: #f7f8fa; /* Màu nền nhạt */
+  border-radius: 5px;
+  border: 1px solid #d3d3d3;
+  padding: 10px 15px; /* Điều chỉnh khoảng cách padding */
+  margin-bottom: 10px;
+}
+
+.product-detail-description h3, .product-detail-extra-info h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0; /* Xóa khoảng cách trên và dưới */
+  color: #0f0f0f;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc; /* Kẻ một đường viền mỏng bên dưới */
+  padding-bottom: 10px;
+
+}
+
+.toggle-details {
+  font-size: 16px;
+  color: #333; /* Màu sắc đồng nhất với tiêu đề */
+  cursor: pointer;
+  background-color: transparent; /* Nền trong suốt */
+  border: none; /* Xóa viền */
+  outline: none; /* Xóa đường viền khi nhấn vào */
+}
+
+/* Đảm bảo không có hiệu ứng hover */
+.toggle-details:hover {
+  background-color: transparent; /* Không thay đổi nền khi hover */
+  color: #333; /* Màu chữ không thay đổi khi hover */
+}
+
+
+.description-content, .details-content {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+
+.product-detail-right {
+  max-width: 700px;
+  padding-left: 100px;
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo cột */
+  align-items: flex-start; /* Căn chỉnh các phần tử sang bên trái */
+  justify-content: flex-start;
+}
+.product-detail-right h2 {
+  font-size: 3rem; /* Tăng kích thước chữ, có thể thay đổi theo ý muốn */
+  font-weight: bold; /* Đặt độ đậm nếu cần */
+  margin-top: 60px;
+  font-family: Arial, Helvetica, sans-serif; /* Đảm bảo không có khoảng cách trên */
+  margin-bottom: 15px; /* Khoảng cách dưới nếu cần */
+  align-items: start;
+  justify-content: start; /* Khoảng cách dưới nếu cần */
+  letter-spacing: 0.1em; /* Tăng khoảng cách giữa các chữ cái */
+  word-spacing: 0.3em; /* Tăng khoảng cách giữa các từ */
+}
+
+.create-button {
+  background-color: rgb(51, 49, 49);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-size: 14px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  width: 230px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+  background-color: #323333;
+}
+
+.product-ratings{
+  margin-top: 30px;
+  display: flex;
+}
+
+
+.product-ratings .filled-star {
+  color: gold;
+  font-size: 70px;
+
+}
+
+.product-ratings .empty-star {
+  color: lightgray;
+  font-size: 70px;
+ 
+}
+
+.created-at {
+  display: grid;
+  justify-content: start; /* Căn lề các nội dung về bên trái */
+  gap: 5px;
+  margin-top: 50px;
+}
+.ri-timer-fill {
+  font-size: 1.5rem; /* Thay đổi kích thước chữ theo ý muốn */
+  font-weight: normal; /* Có thể thêm độ đậm nếu cần */
+}
+
+.created-at-header, .created-at-values {
+  display: flex;
+  justify-content: space-between; /* Để giãn cách đều các tiêu đề và giá trị */
+}
+
+.created-at-header h5, .created-at-values p {
+  margin: 0 15px; /* Thêm khoảng cách giữa các phần tử */
+  min-width: 50px; /* Đảm bảo có khoảng cách đều giữa các cột */
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight:bold;
+   /* Căn giữa văn bản trong từng cột */
+}
+
+
+
+.address-info {
+  display: flex; /* Sử dụng Flexbox để sắp xếp */
+  align-items: center;
+  margin-top: 30px; /* Căn giữa theo chiều dọc */
+}
+
+.from-address,
+.buyer-info {
+  display: flex; /* Sắp xếp hình ảnh và thông tin theo hàng */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin: 0 20px; /* Khoảng cách giữa các phần */
+}
+
+.profile-img {
+  width: 50px; /* Kích thước hình ảnh lớn hơn */
+  height: 50px; /* Kích thước hình ảnh lớn hơn */
+  margin-right: 10px; /* Khoảng cách giữa hình ảnh và thông tin */
+}
+
+.info {
+  display: flex; /* Để h5 và span nằm theo cột */
+  flex-direction: column; /* Đặt h5 ở trên span */
+}
+ 
+.divider {
+  width: 1px; /* Chiều rộng của đường kẻ */
+  height: 50px; /* Chiều cao của đường kẻ */
+  background-color: #ccc; /* Màu sắc của đường kẻ */
+}
+
+
+
+
+.cost-container {
+  border: 1px solid #000000; /* Đường viền xung quanh khung */
+  border-radius: 8px; /* Bo tròn góc */
+  padding: 20px 20px 00; /* Khoảng cách bên trong */
+  position: relative; /* Để định vị tiêu đề */
+  margin-top: 50px;
+  height: 80px;
+  width: 100%; /* Khoảng cách giữa các phần tử */
+  background-color: #f9f9f9; /* Màu nền của khung */
+}
+
+.cost-label {
+  position: absolute; /* Định vị tiêu đề bên trên */
+  top: -10px; /* Điều chỉnh vị trí trên */
+  left: 30px; /* Điều chỉnh vị trí bên trái */
+  background-color: #4b4b4b; /* Màu nền của tiêu đề */
+  padding: 0 5px; /* Khoảng cách bên trái và bên phải cho tiêu đề */
+  font-weight: normal;
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+  font-size: 15px;
+  border-radius: 10px;
+  color: #f9f9f9;
+  text-align: center;
+  width: 100px;
+  height: 25px;/* Đậm cho tiêu đề */
+}
+
+.cost-value {
+  font-size: 16px; /* Kích thước chữ cho giá */
+  color: #333; /* Màu chữ cho giá */
+}
+.cost-box {
+  font-size: 16px; /* Kích thước chữ cho giá */
+  color: #333; /* Màu chữ cho giá */
+}
+
+.eth-value {
+  font-size: 14px; /* Kích thước chữ nhỏ hơn cho ETH */
+  color: #555; /* Màu chữ cho giá trị ETH */
+  margin-top: 5px; /* Khoảng cách giữa Wei và ETH */
+}
+
+
+.related-products {
+  margin-top: 40px;
+}
+@import url("https://fonts.googleapis.com.css?family=Bangers");
+.related-products h3 {
+  margin-bottom: 10px;
+  font-family: "Bangers", "sans-serif";
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.product-cardss {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center; /* Khoảng cách giữa các card */
+}
+
+.product-cardes {
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  max-width: 170px;
+  max-height: 220px;
+  margin-bottom: 50px;
+}
+
+.product-cardes:hover {
+  transform: scale(1.05);
+}
+
+.products-img img {
+  width: 100%;
+  height: 140px;
+}
+
+.products-info {
+  padding: 10px;
+}
+.products-info p {
+  font-size: 15px;
+  text-align: center;
+}
+.products-info h6 {
+  font-weight: bold;
+  text-align: center;
+}

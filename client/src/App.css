@@ -1,0 +1,145 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loader */
+#loader {
+  font-size: 3rem;
+  margin-bottom: 100rem;
+  margin-top: 200px;
+}
+
+/* Container for the main app */
+.App {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  background: #ffffff; /* Light background for readability */
+  color: #333; /* Dark text color for contrast */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Header styles */
+h1, h2 {
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+/* Input fields */
+input[type="text"] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: calc(100% - 22px);
+  background: #fff;
+  color: #333;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styles */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* List styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Status text */
+.status {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Optional: Add a simple starry effect */
+.App::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0) 80%);
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* SiteNavbar starts */
+/* Add specific styles for SiteNavbar here */
+/* SiteNavbar ends */
+
+/* Main starts */
+/* Add specific styles for Main here */
+/* Main ends */
+
+/* ProductForm starts */
+/* Add specific styles for ProductForm here */
+/* ProductForm ends */
+
+/* ProductList, OrderList, SalesList starts */
+/* Add specific styles for ProductList, OrderList, SalesList here */
+/* ProductList, OrderList, SalesList ends */
+
+/* Home */
+/* Add specific styles for Home here */
+
+/* Footer */
+/* Add specific styles for Footer here */
