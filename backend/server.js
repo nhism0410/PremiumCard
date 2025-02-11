@@ -9,11 +9,11 @@ const app = express();
 app.use(express.json());
 app.use(express.static('public'));
 app.use(cors());
-app.use('/api/items', itemRoutes); // Ensure the API route is correct
+app.use('/api/items', itemRoutes); 
 
 // MongoDB connection
 mongoose
-  .connect('mongodb://localhost:27017/Blockchain', {
+  .connect('mongodb+srv://marketplacex:20032025@blockchain.ho4jz.mongodb.net/BlockChain?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -31,7 +31,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong!' });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

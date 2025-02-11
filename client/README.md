@@ -68,3 +68,42 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+sha256:fa22a3cf8cadf7e5b80ea8bfc3c8890275d516c529e5c84ec946fbc0a97a6050
+
+Backend:
+1. cd backend
+2. Install the project dependencies using `npm install`.
+3. Run the web application using `npm dev`.
+----
+Docker :
+1 - docker build -t ecommerce-be-node .     
+2 - docker run -p 4000:4000 ecommerce-be-node   
+
+
+superadmin@gmail.com
+admin123
+---
+
+docker build -t marketplacex .
+docker run -p 4000:4000 marketplacex  
+
+----
+fontend
+
+docker build -t marketplacex .
+docker run -p 3000:3000 marketplacex  
+
+
+image : 
+docker login
+docker tag marketplacex:latest emnhism/marketplacex:latest
+docker push emnhism/marketplacex:latest
+
+
+docker build -t fontend .
+docker run -p 3000:3000 fontend
+docker tag fontend:latest emnhism/fontend:latest
+docker push emnhism/fontend:latest

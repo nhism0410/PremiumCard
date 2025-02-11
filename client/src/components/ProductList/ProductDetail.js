@@ -28,11 +28,11 @@ const ProductDetail = ({ handleBuyItem, account }) => {
   useEffect(() => {
     const fetchItemDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/items/${id}`);
+        const response = await axios.get(`https://backend-8ifh.onrender.com/api/items/${id}`);
         setItem(response.data);
         
         // Gọi API để lấy sản phẩm tương tự
-        const relatedResponse = await axios.get(`http://localhost:5000/api/items?category=${response.data.category}`);
+        const relatedResponse = await axios.get(`https://backend-8ifh.onrender.com/api/items?category=${response.data.category}`);
         setRelatedItems(relatedResponse.data.filter(relItem => relItem._id !== id)); // Lọc sản phẩm hiện tại ra khỏi danh sách
         setLoading(false);
       } catch (err) {
@@ -71,8 +71,8 @@ const ProductDetail = ({ handleBuyItem, account }) => {
     <div className="product-detail-container">
       <div className="product-detail-left">
         <div className="product-detail-img">
-          {item.image && (
-            <img src={`http://localhost:5000/${item.image}`} alt={item.name} />
+          {item?.image && (
+            <img src={`https://backend-8ifh.onrender.com/${item.image}`} alt={item.name} />
           )}
         </div>
   
@@ -198,7 +198,7 @@ const ProductDetail = ({ handleBuyItem, account }) => {
               <div className="product-cardes" key={relatedItem._id} onClick={() => handleCardClick(relatedItem._id)}>
                 <div className="products-img">
                   {relatedItem.image && (
-                    <img src={`http://localhost:5000/${relatedItem.image}`} alt={relatedItem.name} />
+                    <img src={`https://backend-8ifh.onrender.com/${relatedItem.image}`} alt={relatedItem.name} />
                   )}
                 </div>
                 <div className="products-info">

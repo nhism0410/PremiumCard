@@ -6,6 +6,7 @@ import ItemManagerContracts from "./contracts/ItemManager.json";
 import ItemContract from "./contracts/Item.json";
 import "./App.css";
 import { BrowserRouter as Router } from "react-router-dom";
+import Web3 from 'web3';
 
 class App extends Component {
   state = {
@@ -21,8 +22,35 @@ class App extends Component {
     categories: []
   };
 
+  loadBlockchainData = async () => {
+    if (window.ethereum) {
+      this.web3 = new Web3(window.ethereum);
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+
+      const accounts = await this.web3.eth.getAccounts();
+      this.setState({ account: accounts[0] });
+
+      const networkId = await this.web3.eth.net.getId();
+      const networkData = ItemManagerContracts.networks[networkId];
+
+      if (networkData) {
+        const contract = new this.web3.eth.Contract(
+          ItemManagerContracts.abi,
+          networkData.address
+        );
+        this.setState({ itemManager: contract });
+      } else {
+        console.error("Smart contract not deployed on this network.");
+        alert("Hợp đồng chưa được deploy trên mạng này!");
+      }
+    } else {
+      console.error("Ethereum provider not found");
+    }
+  };
+
   componentDidMount = async () => {
     try {
+      await this.loadBlockchainData();
       this.web3 = await getWeb3();
       this.accounts = await this.web3.eth.getAccounts();
       this.setState({ account: this.accounts[0] });
@@ -51,6 +79,7 @@ class App extends Component {
       console.error(error);
     }
   };
+
   componentWillUnmount() {
     if (window.ethereum) {
       window.ethereum.removeListener('accountsChanged', this.handleAccountsChanged);
@@ -62,7 +91,6 @@ class App extends Component {
       console.log("No accounts found");
     } else {
       this.setState({ account: accounts[0] });
-      // Reload the entire page
       window.location.reload();
     }
   };
@@ -81,14 +109,14 @@ class App extends Component {
 
   loadItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/items');
-      // Check the structure of the response
+      const response = await axios.get('https://backend-8ifh.onrender.com/api/items');
       console.log('Loaded items:', response.data);
       this.setState({ items: response.data });
     } catch (error) {
       console.error('Error loading items from backend:', error);
     }
   };
+  
   
 
   handleInputChange = (event) => {
@@ -107,7 +135,7 @@ handleSubmit = async (category, image) => {
 
   try {
     const result = await this.itemManager.methods
-      .createItem(itemName, cost, category,description)  // Truyền thêm description vào đây
+      .createItem(itemName, cost,description, category)  
       .send({ from: this.accounts[0] });
 
     alert(`Send ${cost} Wei to ${result.logs[0].address}`);
@@ -117,7 +145,7 @@ handleSubmit = async (category, image) => {
     const itemData = {
       name: itemName,
       cost: cost,
-      description: description,  // Lưu description vào backend
+      description: description,  
       category: category,
       fromAddress: this.accounts[0],
       toAddress: result.logs[0].address,
@@ -129,7 +157,7 @@ handleSubmit = async (category, image) => {
     };
 
     // Gửi yêu cầu đến backend
-    const response = await axios.post("http://localhost:5000/api/items/add", itemData, {
+    const response = await axios.post("https://backend-8ifh.onrender.com/api/items/add", itemData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -151,7 +179,7 @@ handleUpdateCategory = async (itemId, category) => {
       category // Cập nhật danh mục sản phẩm
     };
 
-    await axios.post("http://localhost:5000/api/items/update", itemData);
+    await axios.post("https://backend-8ifh.onrender.com/api/items/update", itemData);
     alert('Item category updated successfully');
     this.loadItems();
   } catch (error) {
@@ -202,7 +230,7 @@ handleBuyItem = async (itemId, itemPrice) => {
       buyer: this.accounts[0],
     };
 
-    await axios.post("http://localhost:5000/api/items/update", itemData);
+    await axios.post("https://backend-8ifh.onrender.com/api/items/update", itemData);
     this.loadItems();
   } catch (error) {
     console.error("Error buying item:", error.message);
@@ -248,7 +276,7 @@ handleBuyItem = async (itemId, itemPrice) => {
       };
   
       // Update the item status in the backend
-      await axios.post("http://localhost:5000/api/items/update", itemData);
+      await axios.post("https://backend-8ifh.onrender.com/api/items/update", itemData);
   
       // Update the item status in the state
       this.setState(prevState => ({
@@ -288,7 +316,7 @@ handleSubmitRating = async (itemId, rating) => {
         isRated: true,
       };
 
-      await axios.post("http://localhost:5000/api/items/update", itemData);
+      await axios.post("https://backend-8ifh.onrender.com/api/itemsupdate", itemData);
       alert("Đã gửi đánh giá thành công!");
       this.loadItems();
     } catch (error) {

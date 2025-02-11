@@ -106,6 +106,15 @@ const ProductForm = ({ onSubmit, onInputChange }) => {
             />
           </div>
           <div className="field padding-bottom--24">
+            <label htmlFor="description">Description:</label>
+            <input
+              type="text"
+              name="description"
+              onChange={onInputChange}
+              className="input-field"
+            />
+          </div>
+          <div className="field padding-bottom--24">
             <label htmlFor="category">Category:</label>
             <select
               name="category"
@@ -119,15 +128,7 @@ const ProductForm = ({ onSubmit, onInputChange }) => {
               ))}
             </select>
           </div>
-          <div className="field padding-bottom--24">
-            <label htmlFor="description">Description:</label>
-            <input
-              type="text"
-              name="description"
-              onChange={onInputChange}
-              className="input-field"
-            />
-          </div>
+          
           <button
             type="button"
             onClick={handleFormSubmit}

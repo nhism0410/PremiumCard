@@ -85,7 +85,7 @@ const Profile = ({ account, items, handleBuyItem, handleDeliverItem, handleRatin
                   <div className="product-card" key={item._id}>
                     <div className="product-img" onClick={() => handleCardClick(item._id)}>
                       {item.image && (
-                        <img src={`http://localhost:5000/${item.image}`} alt={item.name} />
+                        <img src={`http://localhost:4000/${item.image}`} alt={item.name} />
                       )}
                     </div>
                     <div className="product-info">
@@ -152,7 +152,7 @@ const Profile = ({ account, items, handleBuyItem, handleDeliverItem, handleRatin
                   <div className="product-card" key={item._id}>
                     <div className="product-img" onClick={() => handleCardClick(item._id)}>
                       {item.image && (
-                        <img src={`http://localhost:5000/${item.image}`} alt={item.name} />
+                        <img src={`https://backend-8ifh.onrender.com/${item.image}`} alt={item.name} />
                       )}
                     </div>
                     <div className="product-info">

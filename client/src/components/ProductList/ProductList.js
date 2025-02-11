@@ -1,23 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaSearch, FaTimes } from "react-icons/fa";
 import "../ProductList/productlist.css";
 import "remixicon/fonts/remixicon.css";
 import { useNavigate } from "react-router-dom";
 import categories from "../assets/categories.json";
 
-const ProductList = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRating, account }) => {
+const ProductList = ({ handleBuyItem, handleDeliverItem, handleSubmitRating, account }) => {
+  const [items, setItems] = useState([]); // State to hold the fetched items
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [rating, setRating] = useState({});
   const navigate = useNavigate();
 
+  // Fetch items from the API
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await fetch("https://backend-8ifh.onrender.com/api/items");
+        const data = await response.json();
+        setItems(data);
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      }
+    };
+    fetchItems();
+  }, []);
+
   const handleCardClick = (id) => {
     navigate(`/productDetail/${id}`); // Điều hướng tới trang chi tiết sản phẩm
   };
-
-  // const shortenAddress = (address) => {
-  //   return `${address.slice(0, 6)}...${address.slice(-4)}`;
-  // };
 
   // Lọc sản phẩm theo danh mục đã chọn và truy vấn tìm kiếm
   const filteredItems = items
@@ -99,15 +110,11 @@ const ProductList = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRati
         <div className="product-cards">
           {filteredItems.length > 0 ? (
             filteredItems.map((item) => (
-              <div
-                className="product-card"
-                key={item._id}
-              // Thêm onClick để điều hướng
-              >
+              <div className="product-card" key={item._id}>
                 <div className="product-img" onClick={() => handleCardClick(item._id)}>
                   {item.image && (
                     <img
-                      src={`http://localhost:5000/${item.image}`}
+                      src={`https://backend-8ifh.onrender.com/${item.image}`}
                       alt={item.name}
                     />
                   )}
@@ -116,10 +123,6 @@ const ProductList = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRati
                 <div className="product-info">
                   <h3>{item.name}</h3>
                   <p>Cost: {item.cost} Wei</p>
-                  {/* <p>Status: {item.status}</p> */}
-                  {/* <p className="shortened-address">
-                    Item Address: {shortenAddress(item.itemAddress)}
-                  </p> */}
                 </div>
                 <div className="product-actions">
                   {item.status === "Create" && (
@@ -128,7 +131,6 @@ const ProductList = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRati
                       onClick={() => handleBuyItem(item._id, item.cost)}
                     >
                       Buy Now
-                      {/* <span className="basket-icon"><i className="ri-shopping-basket-2-fill"></i></span> */}
                     </button>
                   )}
 
@@ -146,7 +148,6 @@ const ProductList = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRati
                         <>
                           {item.isRated ? (
                             <div className="product-rating">
-
                               {renderStars(item.rating !== null ? item.rating : 0)}
                             </div>
                           ) : (
@@ -176,7 +177,6 @@ const ProductList = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRati
                           {renderStars(item.rating !== null ? item.rating : 0)}
                         </div>
                       )}
-
                     </>
                   )}
                 </div>

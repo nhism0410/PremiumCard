@@ -143,19 +143,24 @@ const HomePage = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRating,
               <div
                 className="product-card"
                 key={item._id}
-                onClick={() => handleCardClick(item._id)} // Điều hướng tới chi tiết sản phẩm
+              // Thêm onClick để điều hướng
               >
-                <div className="product-img">
+                <div className="product-img" onClick={() => handleCardClick(item._id)}>
                   {item.image && (
                     <img
-                      src={`http://localhost:5000/${item.image}`} // Sửa cú pháp ở đây
+                      src={`https://backend-8ifh.onrender.com/${item.image}`}
                       alt={item.name}
                     />
                   )}
                 </div>
+
                 <div className="product-info">
                   <h3>{item.name}</h3>
                   <p>Cost: {item.cost} Wei</p>
+                  {/* <p>Status: {item.status}</p> */}
+                  {/* <p className="shortened-address">
+                    Item Address: {shortenAddress(item.itemAddress)}
+                  </p> */}
                 </div>
                 <div className="product-actions">
                   {item.status === "Create" && (
@@ -164,6 +169,7 @@ const HomePage = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRating,
                       onClick={() => handleBuyItem(item._id, item.cost)}
                     >
                       Buy Now
+                      {/* <span className="basket-icon"><i className="ri-shopping-basket-2-fill"></i></span> */}
                     </button>
                   )}
 
@@ -181,6 +187,7 @@ const HomePage = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRating,
                         <>
                           {item.isRated ? (
                             <div className="product-rating">
+
                               {renderStars(item.rating !== null ? item.rating : 0)}
                             </div>
                           ) : (
@@ -190,12 +197,12 @@ const HomePage = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRating,
                                   <React.Fragment key={star}>
                                     <input
                                       type="radio"
-                                      id={`star${star}-${item._id}`} // Sửa cú pháp ở đây
-                                      name={`rating-${item._id}`} // Sửa cú pháp ở đây
+                                      id={`star${star}-${item._id}`}
+                                      name={`rating-${item._id}`}
                                       value={star}
                                       onChange={(e) => handleRatingChange(item._id, e)}
                                     />
-                                    <label htmlFor={`star${star}-${item._id}`}>&#9733;</label> {/* Sửa cú pháp ở đây */}
+                                    <label htmlFor={`star${star}-${item._id}`}>&#9733;</label>
                                   </React.Fragment>
                                 ))}
                               </div>
@@ -210,6 +217,7 @@ const HomePage = ({ items, handleBuyItem, handleDeliverItem, handleSubmitRating,
                           {renderStars(item.rating !== null ? item.rating : 0)}
                         </div>
                       )}
+
                     </>
                   )}
                 </div>

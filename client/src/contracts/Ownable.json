@@ -577,7 +577,7 @@
   "sourceMap": "68:363:3:-:0;;;130:53;;;;;;;;;;168:10;151:6;;:28;;;;;;;;;;;;;;;;;;68:363;;;;;;",
   "deployedSourceMap": "68:363:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;335:93;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;92:29;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;335:93;374:4;413:6;;;;;;;;;;;399:20;;:10;:20;;;391:29;;335:93;:::o;92:29::-;;;;;;;;;;;;:::o;7:90:4:-;41:7;84:5;77:13;70:21;59:32;;7:90;;;:::o;103:109::-;184:21;199:5;184:21;:::i;:::-;179:3;172:34;103:109;;:::o;218:210::-;305:4;343:2;332:9;328:18;320:26;;356:65;418:1;407:9;403:17;394:6;356:65;:::i;:::-;218:210;;;;:::o;434:126::-;471:7;511:42;504:5;500:54;489:65;;434:126;;;:::o;566:104::-;611:7;640:24;658:5;640:24;:::i;:::-;629:35;;566:104;;;:::o;676:142::-;779:32;805:5;779:32;:::i;:::-;774:3;767:45;676:142;;:::o;824:254::-;933:4;971:2;960:9;956:18;948:26;;984:87;1068:1;1057:9;1053:17;1044:6;984:87;:::i;:::-;824:254;;;;:::o",
   "source": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.18;\r\n\r\ncontract Ownable {\r\n    address payable public _owner;\r\n\r\n    constructor() {\r\n    _owner = payable(msg.sender);\r\n}\r\n\r\n\r\n    modifier onlyOwner() {\r\n        require(isOwner(), \"You're not the owner\"); // Bạn không phải chủ sở hữu\r\n        _;\r\n    }\r\n\r\n    function isOwner() public view returns(bool) {\r\n        return (msg.sender == _owner);\r\n    }\r\n}",
-  "sourcePath": "D:\\LAPTRINH\\blockchain\\GK\\react-box\\react-box\\contracts\\Ownable.sol",
+  "sourcePath": "D:\\Lê Trần Thu Liễu_94448_ST21A1A\\react-box\\contracts\\Ownable.sol",
   "ast": {
     "absolutePath": "project:/contracts/Ownable.sol",
     "exportedSymbols": {
@@ -1059,7 +1059,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-10-20T10:38:56.953Z",
+  "updatedAt": "2025-02-10T08:41:08.316Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
